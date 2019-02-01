@@ -2,9 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>I18N Spring Webflux</title>
+<title>I18N Spring Boot</title>
 </head>
 <body>
-	<h2 data-th-text="#{home.welcome}">Hello World!</h2>
+	<h2 data-th-text="#{home.welcome}"></h2>
+	<p data-th-text="#{home.info}"></p>
+	<p data-th-text="#{home.changelanguage}"></p>
+	<ul>
+		<li><a href="?lang=en" data-th-text="#{home.lang.en}"></a></li>
+		<li><a href="?lang=de" data-th-text="#{home.lang.de}"></a></li>
+		<li><a href="?lang=zh" data-th-text="#{home.lang.zh}"></a></li>
+	</ul>
 </body>
 </html>
