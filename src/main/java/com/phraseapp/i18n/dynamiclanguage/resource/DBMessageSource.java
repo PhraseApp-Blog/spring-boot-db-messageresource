@@ -11,18 +11,18 @@ import org.springframework.stereotype.Component;
 import com.phraseapp.i18n.dynamiclanguage.repository.LanguageService;
 
 @Component("messageSource")
-public class DBMessageSource extends AbstractMessageSource{
-    
-    @Autowired
-    private LanguageService langService;
+public class DBMessageSource extends AbstractMessageSource {
 
-    @Override
-    protected MessageFormat resolveCode(String code, Locale locale) {
-        Map<String,String> messages = langService.getAllMessageByLocale(locale.getLanguage());
-        if (messages.containsKey(code)) {
-        	return new MessageFormat(messages.get(code), locale);
-        }
-        return new MessageFormat("", locale);
-    }
+	@Autowired
+	private LanguageService langService;
+
+	@Override
+	protected MessageFormat resolveCode(String code, Locale locale) {
+		Map<String, String> messages = langService.getAllMessageByLocale(locale.getLanguage());
+		if (messages.containsKey(code)) {
+			return new MessageFormat(messages.get(code), locale);
+		}
+		return new MessageFormat("", locale);
+	}
 
 }

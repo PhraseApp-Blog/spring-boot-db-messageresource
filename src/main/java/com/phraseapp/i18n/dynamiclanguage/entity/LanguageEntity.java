@@ -8,53 +8,53 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="languages")
+@Table(name = "languages")
 public class LanguageEntity {
-    
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    @Column
-    private Integer id;
-    
-    @Column
-    private String locale;
-    
-    @Column(name="messagekey")
-    private String key;
-    
-    @Column(name="messagecontent")
-    private String content;
+	@Id
+	@Column
+	private Integer id;
 
-    public Integer getId() {
-        return id;
-    }
+	@Column
+	private String locale;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	@Column(name = "messagekey")
+	private String key;
 
-    public String getLocale() {
-        return locale;
-    }
+	@Column(name = "messagecontent")
+	private String content;
 
-    public void setLocale(String locale) {
-        this.locale = locale;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getKey() {
-        return key;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+	public String getLocale() {
+		return locale;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setLocale(String locale) {
+		this.locale = locale;
+	}
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-    
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 }

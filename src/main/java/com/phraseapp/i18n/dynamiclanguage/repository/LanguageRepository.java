@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.phraseapp.i18n.dynamiclanguage.entity.LanguageEntity;
 
 @Repository
-public interface LanguageRepository extends JpaRepository<LanguageEntity, Integer>{
-    
-    List<LanguageEntity> findAllByLocale(String locale);
+public interface LanguageRepository extends JpaRepository<LanguageEntity, Integer> {
+
+	List<LanguageEntity> findAllByLocale(String locale);
 
 }

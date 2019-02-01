@@ -26,8 +26,6 @@ public class LanguageService implements LanguageServiceInf {
 	@Override
 	public Map<String, String> getAllMessageByLocale(String locale) {
 		List<LanguageEntity> langList = this.getAllByLocale(locale);
-		return langList
-				.stream()
-				.collect(Collectors.toMap(x -> x.getKey(), x -> x.getContent()));
+		return langList.stream().collect(Collectors.toMap(x -> x.getKey(), x -> x.getContent()));
 	}
 }

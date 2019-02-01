@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/")
-    public String welcome(Map<String, Object> model) {
-        return "index";
-    }
+	@RequestMapping("/")
+	public String welcome(Map<String, Object> model) {
+		return "index";
+	}
 
 }
