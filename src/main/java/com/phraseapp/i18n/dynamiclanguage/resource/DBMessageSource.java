@@ -19,10 +19,10 @@ public class DBMessageSource extends AbstractMessageSource {
 	private static final String DEFAULT_LOCALE_CODE = "en";
 
 	@Override
-	protected MessageFormat resolveCode(String code, Locale locale) {
-		LanguageEntity message = languageRepository.findByKeyAndLocale(code,locale.getLanguage());
+	protected MessageFormat resolveCode(String key, Locale locale) {
+		LanguageEntity message = languageRepository.findByKeyAndLocale(key,locale.getLanguage());
 		if (message == null) {
-			message = languageRepository.findByKeyAndLocale(code,DEFAULT_LOCALE_CODE);
+			message = languageRepository.findByKeyAndLocale(key,DEFAULT_LOCALE_CODE);
 		}
 		return new MessageFormat(message.getContent(), locale);
 	}
