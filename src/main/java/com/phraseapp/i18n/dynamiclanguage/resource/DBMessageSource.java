@@ -15,14 +15,16 @@ public class DBMessageSource extends AbstractMessageSource {
 
 	@Autowired
 	private LanguageRepository languageRepository;
+	
+	private static final String DEFAULT_LOCALE_CODE = "en";
 
 	@Override
 	protected MessageFormat resolveCode(String code, Locale locale) {
 		LanguageEntity message = languageRepository.findByKeyAndLocale(code,locale.getLanguage());
-		if (message != null) {
-			return new MessageFormat(message.getContent(), locale);
+		if (message == null) {
+			message = languageRepository.findByKeyAndLocale(code,DEFAULT_LOCALE_CODE);
 		}
-		return new MessageFormat("", locale);
+		return new MessageFormat(message.getContent(), locale);
 	}
 
 }
